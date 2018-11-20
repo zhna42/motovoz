@@ -1,0 +1,134 @@
+
+.header-menu {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  height: 60px;
+  margin-top: 24px;
+
+  > .menu-button {
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    display: none;
+
+    > div {
+      height: 4px;
+      margin-bottom: 5px;
+      background-color: $orange;
+      transition: all 0.2s;
+    }
+
+    &.is-active {
+      > div:nth-child(2) {
+        opacity: 0;
+      }
+
+      > div:nth-child(1) {
+        transform: rotateZ(45deg) translateY(10px) translateX(6px);
+      }
+
+      > div:nth-child(3) {
+        transform: rotateZ(-45deg) translateY(-6px) translateX(2px);
+      }
+    }
+
+    @media (max-width: 1100px) {
+      display: block;
+    }
+  }
+
+  > .header-logo {
+    margin-left: 30px;
+    width: 88px;
+    height: 46px;
+
+    @media (max-width: 1100px) {
+      width: 60px;
+      height: 30px;
+      margin-top: 8px;
+      margin-left: 10px;
+    }
+  }
+
+  > .menu {
+    flex: 1;
+    margin-top: 20px;
+
+    > .main-ul {
+      display: flex;
+      justify-content: flex-end;
+
+      > li {
+        color: $colorWhite;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 0 15px 0 14px;
+        height: 12px;
+        line-height: 12px;
+        cursor: pointer;
+        transition: transform 0.1s;
+
+        &:nth-child(10) > a {
+          margin-left: 14px;
+          color: $colorWhite;
+          text-decoration: none;
+
+          @media (max-width: 1100px) {
+            margin: 0;
+          }
+        }
+
+        &:nth-child(12) {
+          padding-right: 10px;
+
+          > a {
+            text-transform: lowercase;
+            padding-right: 0;
+            color: $orange;
+          }
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        @media (max-width: 1100px) {
+          text-align: center;
+          margin: 10px;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        justify-content: flex-start;
+        flex-direction: column;
+      }
+
+      @media (min-width: 1100px) {
+        > .border-right {
+          border-right: solid 2px $colorWhite;
+        }
+      }
+    }
+
+    @media (max-width: 1100px) {
+      overflow-y: auto;
+      height: calc(100% - 50px);
+    }
+  }
+
+  @media (max-width: 1100px) {
+    transition: height 0.2s;
+    position: fixed;
+    flex-direction: column;
+    height: 50px;
+    margin: 0;
+    width: 100%;
+    background-color: #000;
+
+    &.is-active {
+      height: 100%;
+    }
+  }
+}

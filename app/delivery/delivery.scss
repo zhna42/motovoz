@@ -1,0 +1,47 @@
+.delivery {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+
+  > .content-slider {
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    display: flex;
+    transition: all 0.4s;
+    transform: translateX(-33.6%);
+  }
+
+  > .content-center {
+    width: 1100px;
+    margin: auto auto;
+    color: #fff;
+
+    > .delivery-header {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    > .slide-test {
+      width: 500%;
+      display: flex;
+
+      > p {
+        margin-right: 20%;
+        font-size: 16px;
+        transition: all 0.4s;
+        transform: translateX(-251%);
+      }
+    }
+  }
+}
+
+.delivery-content {
+  flex: 1;
+
+  > img {
+    height: 100%;
+  }
+}
